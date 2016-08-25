@@ -3,40 +3,45 @@ This is a Functional Web Testing Java Framework built on top of Selenium, that h
 
 > **Installation:**
 > - First of all start by cloning or downloading the skeleton of the project.   
->```sh
->git clone  https://github.com/ospinakamilo/BasiliscusFrameworkSkeleton.git
-
->or
->```sh
->wget https://github.com/ospinakamilo/BasiliscusFrameworkSkeleton/archive/master.zip
-
+```sh
+git clone  https://github.com/ospinakamilo/BasiliscusFrameworkSkeleton.git
+```
+or
+```sh
+wget https://github.com/ospinakamilo/BasiliscusFrameworkSkeleton/archive/master.zip
+```
 
 > - Now import as Maven project on your favorite IDE.
 > - To start using the framework you must first add "basiliscus.jar" dependency to your project. You can achieve this in 3 different ways:
->>1. The first way is to add the jar localized at "/src/test/resources/Jars" to the build path of the project
+
+>>1. The first way is to add the jar located at "/src/test/resources/Jars" to the build path of the project
 >>2. Another option is to edit the POM.xml to add an external dependency as follows (This way comes preconfigured in the skeleton project):
->>```xml
->><dependency>
->>    <groupId>basiliscus</groupId>
->>    <artifactId>basiliscus</artifactId>
->>    <scope>system</scope>
->>    <version>1.0.0</version>
->>    <systemPath>${basedir}/src/test/resources/Jars/basiliscus.jar</systemPath>
->></dependency> 
-
+>> 
+    ```xml
+        <dependency>
+            <groupId>basiliscus</groupId>
+            <artifactId>basiliscus</artifactId>
+             <scope>system</scope>
+             <version>1.0.0</version>
+             <systemPath>${basedir}/src/test/resources/Jars/basiliscus.jar</systemPath>
+        </dependency> 
+    ```
 >>3. The last option, and the recommended one, is to install the dependency on your local Maven repository and then add the dependency to the POM.xml
->> To install install the jar in your local Maven repository run:
->> ```sh
->> mvn install:install-file -Dfile=CompletePathTo/src/test/resources/Jars/basiliscus.jar -DgroupId=basiliscus -DartifactId=basiliscus -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
 
->>After installing the dependency include it in the POM.xml as follows:
->>```xml
->><dependency>
->>    <groupId>basiliscus</groupId>
->>    <artifactId>basiliscus</artifactId>
->>    <version>1.0.0</version>
->></dependency>
-
+>>> To install the jar in your local Maven repository run:
+>>
+```sh
+mvn install:install-file -Dfile=CompletePathTo/src/test/resources/Jars/basiliscus.jar -DgroupId=basiliscus -DartifactId=basiliscus -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
+```
+>>>After installing the dependency include it in the POM.xml as follows:
+>>>
+```xml
+<dependency>
+    <groupId>basiliscus</groupId>
+    <artifactId>basiliscus</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
 
 #### Using the Framework
 The structure of the framework is pretty plain, divided in 3 layers that allow a much easier reuse of methods, data and tests.
@@ -64,20 +69,20 @@ src/test/java/automatedTests
     │  OutlookSmokeTest.java
 ```
 
-##### Framework layers communication and purpouse
-Although there is nothing that establish how layers communicate between each other, a good practice is that each layer communicates in the next way:
+##### Framework communication layers and purpose
+Although there is nothing that establishes how layers communicate between each other, a good practice is that each layer communicates in the next way:
 ```c
 
 +--------------+	# Test Flows should only interact with Archetypes
 |              |	# giving a sequence in wich the methods should be
 |  Test Flows  |	# executed. This creates test flows with methods
 |              |	# that can be reused as many times as needed.
-+------+-------+	# Note: An Achetype method can be used in many TestFlows
++------+-------+	# Note: An Archetype method can be used in many TestFlows.
        |
        v
 +--------------+	# Test Archetypes should only interact with Data.
 |    Test      |	# Archetypes are the abstraction of Entities, Pages or
-|  Archetypes  |	# Functionalities that can be represented trough 
+|  Archetypes  |	# Functionalities that can be represented through 
 |              |	# a group of methods.
 +------+-------+	
        |
