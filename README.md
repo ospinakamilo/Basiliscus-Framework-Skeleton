@@ -1,7 +1,7 @@
 # Basiliscus Framework Skeleton
 This is a Functional Web Testing Java Framework built on top of Selenium, that helps keeping in an organized way Functional Test Flows, Reusable Methods and Data, while providing a set of own methods to make a little bit easier working with Selenium.
 
-Explanation Video and Demo in Spanish: https://www.youtube.com/watch?v=YB55yULiY1I&feature=youtu.be
+Explanation Video and Demo in Spanish: https://www.youtube.com/watch?v=YB55yULiY1I
 
 > **Installation:**
 > - First of all start by cloning or downloading the skeleton of the project.   
