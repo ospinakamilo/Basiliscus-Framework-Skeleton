@@ -45,7 +45,7 @@
 			<groupId>basiliscus</groupId>
 			<artifactId>basiliscus</artifactId>
 			<scope>system</scope>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
 			<systemPath>${basedir}/src/test/resources/Jars/basiliscus.jar</systemPath>
 		</dependency>
 		
@@ -53,7 +53,7 @@
 		<!-- <dependency>
 		    <groupId>basiliscus</groupId>
 		    <artifactId>basiliscus</artifactId>
-		    <version>1.0.0</version>
+		    <version>1.0.1</version>
 		</dependency> -->
 
 		
