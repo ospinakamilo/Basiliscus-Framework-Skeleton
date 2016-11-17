@@ -24,7 +24,7 @@ wget https://github.com/ospinakamilo/BasiliscusFrameworkSkeleton/archive/master.
             <groupId>basiliscus</groupId>
             <artifactId>basiliscus</artifactId>
              <scope>system</scope>
-             <version>1.0.1</version>
+             <version>1.0.0</version>
              <systemPath>${basedir}/src/test/resources/Jars/basiliscus.jar</systemPath>
         </dependency> 
     ```
@@ -33,7 +33,7 @@ wget https://github.com/ospinakamilo/BasiliscusFrameworkSkeleton/archive/master.
 >>> To install the jar in your local Maven repository run:
 >>
 ```sh
-mvn install:install-file -Dfile=CompletePathTo/src/test/resources/Jars/basiliscus.jar -DgroupId=basiliscus -DartifactId=basiliscus -Dversion=1.0.1 -Dpackaging=jar -DgeneratePom=true
+mvn install:install-file -Dfile=CompletePathTo/src/test/resources/Jars/basiliscus.jar -DgroupId=basiliscus -DartifactId=basiliscus -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
 ```
 >>>After installing the dependency include it in the POM.xml as follows:
 >>>
@@ -41,7 +41,7 @@ mvn install:install-file -Dfile=CompletePathTo/src/test/resources/Jars/basiliscu
 <dependency>
     <groupId>basiliscus</groupId>
     <artifactId>basiliscus</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -151,6 +151,12 @@ public class GoogleSimpleArchetype{
 	
 	private static final String SEARCH_INPUT_ID = "lst-ib";
 	private static final String IMAGES_LINK_XPATH = "//*[@id='hdtb-msb']/div[2]";
+	
+	private static BrowserHelper localBrowser;
+	
+	public static void setBrowser(BrowserHelper browser){
+		localBrowser = browser;
+	}
 	
 	public static void goToGoogle(){
 		localBrowser.loadUrl("https://www.google.com.co");
