@@ -145,9 +145,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import automatedTests.testData.GoogleSimpleData;
-import basiliscus.helpers.BrowserHelper;
+import basiliscus.templates.FrameworkArchetype;
 
-public class GoogleSimpleArchetype{
+public class GoogleSimpleArchetype extends FrameworkArchetype{
 	
 	private static final String SEARCH_INPUT_ID = "lst-ib";
 	private static final String IMAGES_LINK_XPATH = "//*[@id='hdtb-msb']/div[2]";
