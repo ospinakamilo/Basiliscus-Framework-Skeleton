@@ -30,8 +30,13 @@ public class GoogleSimpleArchetype extends FrameworkArchetype{
 	}
 	
 	public static void finishAlert(){
-		JavascriptExecutor js =(JavascriptExecutor)localBrowser.getDriver();
-        js.executeScript("alert('Hello World Test Finished')");
+		try {
+			JavascriptExecutor js =(JavascriptExecutor)localBrowser.getDriver();
+			js.executeScript("window.hola ='Hello World';");
+			js.executeScript("alert(hola)");
+		} catch (WebDriverException e) {
+			// TODO: handle exception
+		}
 	}
 	
 }
