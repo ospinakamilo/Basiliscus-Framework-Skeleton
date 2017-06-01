@@ -3,6 +3,7 @@ package automatedTests.testArchetypes;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 
 import automatedTests.testData.GoogleSimpleData;
