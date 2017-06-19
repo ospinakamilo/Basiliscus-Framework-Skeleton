@@ -3,6 +3,7 @@ package automatedTests.testArchetypes;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 
 import automatedTests.testData.GoogleSimpleData;
@@ -11,11 +12,11 @@ import basiliscus.templates.FrameworkArchetype;
 public class GoogleSimpleArchetype extends FrameworkArchetype{
 	
 	private static final String SEARCH_INPUT_ID = "lst-ib";
-	private static final String IMAGES_LINK_XPATH = "//*[@id='hdtb-msb']/div[2]";
+	private static final String IMAGES_LINK_XPATH = "//*[@id='hdtb-msb-vis']/div[2]/a";
 	
 	
 	public static void goToGoogle(){
-		localBrowser.loadUrl("https://www.google.com.co");
+		localBrowser.loadUrl("https://www.google.com.co/?gws_rd=ssl");
 	}
 	
 	public static void searchData(){
@@ -30,8 +31,13 @@ public class GoogleSimpleArchetype extends FrameworkArchetype{
 	}
 	
 	public static void finishAlert(){
-		JavascriptExecutor js =(JavascriptExecutor)localBrowser.getDriver();
-        js.executeScript("alert('Hello World Test Finished')");
+		try {
+			JavascriptExecutor js =(JavascriptExecutor)localBrowser.getDriver();
+			js.executeScript("window.hola ='Hello World';");
+			js.executeScript("alert(hola)");
+		} catch (WebDriverException e) {
+			// TODO: handle exception
+		}
 	}
 	
 }
