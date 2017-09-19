@@ -19,15 +19,15 @@ wget https://github.com/ospinakamilo/BasiliscusFrameworkSkeleton/archive/master.
 >>1. The first way is to add the jar located at "/src/test/resources/Jars" to the build path of the project
 >>2. Another option is to edit the POM.xml to add an external dependency as follows (This way comes preconfigured in the skeleton project):
 >> 
-    ```xml
-        <dependency>
-            <groupId>basiliscus</groupId>
-            <artifactId>basiliscus</artifactId>
-             <scope>system</scope>
-             <version>1.0.2</version>
-             <systemPath>${basedir}/src/test/resources/Jars/basiliscus.jar</systemPath>
-        </dependency> 
-    ```
+   ```xml
+   <dependency>
+       <groupId>basiliscus</groupId>
+       <artifactId>basiliscus</artifactId>
+        <scope>system</scope>
+        <version>1.0.2</version>
+        <systemPath>${basedir}/src/test/resources/Jars/basiliscus.jar</systemPath>
+   </dependency> 
+   ```
 >>3. The last option, and the recommended one, is to install the dependency on your local Maven repository and then add the dependency to the POM.xml
 
 >>> To install the jar in your local Maven repository run:
